@@ -1,10 +1,12 @@
 <p>Hello Run Challenge Randomizer</p>
 
 <% if(randomized) { %>
+    <p> --------------------------- </p>
 
     <!-- Character Randomizer -->
+    <p style="font-weight: bold;">Character: </p>
     <% if(randChar) { %>
-        <p>Character: <%= randChar.name %></p>
+        <p><%= randChar.name %></p>
     <% } %>
 
     <!-- Character Skills Randomizer -->
@@ -16,7 +18,7 @@
         <% } else { %>
             <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
         <% } %>
-        
+
         <p>Secondary: <%= randChar.skillB[Math.floor( Math.random() * randChar.skillB.length )] %></p>
         <p>Utility: <%= randChar.skillC[Math.floor( Math.random() * randChar.skillC.length )] %></p>
         <p>Special: <%= randChar.skillD[Math.floor( Math.random() * randChar.skillD.length )] %></p>
@@ -28,11 +30,22 @@
         <%= randItem %>
     <% } %>
 
+    <!-- Artifacts Randomizer -->
+    <% if(lastArtifactsPicked > 0) { %>
+        <p style="font-weight: bold;">Artefacts: </p>
+        <% for(i = 0; i < lastArtifactsPicked; i++) { %>
+            <p> <%= randArtifacts[i] %> </p>
+        <% } %>
+    <% } %>
+
 <% } %>
+
+<p> --------------------------- </p>
 
 <!-- Challenger option select -->
 <form action='/' method='POST'>
     <!-- Character Picker -->
+    <label for="randChar">Character:</label>
     <select type="checkbox" id="randChar" name="randChar">
         <option value="random" <% if( 'random' === lastCharacterPicked) { %> selected <% } %> >Random</option>      
         <% charList.forEach((value, index) => { %>
@@ -40,14 +53,24 @@
         <% }) %>
     </select>
 
-    <input type="checkbox" id="randSkill" name="randSkill" <% if(randSkill) { %> checked <% } %>>
+    ||
+    <!-- Skills Randomizer -->
     <label for="randSkill">Randomize Skills</label>
+    <input type="checkbox" id="randSkill" name="randSkill" <% if(randSkill) { %> checked <% } %>>
 
-    <input type="checkbox" id="randItem" name="randItem" <% if(randItem) { %> checked <% } %>>
+    ||
+    <!-- Item Randomizer -->
     <label for="randItem">Randomize Item Tier</label>
+    <input type="checkbox" id="randItem" name="randItem" <% if(randItem) { %> checked <% } %>>
+ 
+    ||
+    <!-- Artifacts Randomizer -->
+    <label for="randArtifacts">Artifacts:</label>
+    <input type="number" id="randArtifacts" name="randArtifacts" value=<%= lastArtifactsPicked %> min=0 max=<%= artList.length %>>
 
+    <p> --------------------------- </p>    
     <button type="submit">Randomize</button>
 </form>
 
 <p>Made by @breakinant</p>
-<a href="https://github.com/BreakinAnt/ror2randomchallenger">Feel free to help a newbie out (Github page) :)</a> 
+<a href="https://github.com/BreakinAnt/ror2randomchallenger">Feel free to help a newbie out (Github page)</a> 

@@ -73,4 +73,23 @@ exports.itemTier = [
     "Equipment Items not allowed"
 ];
 
+exports.artefacts = [
+    "Artifact of Chaos",
+    "Artifact of Command",
+    "Artifact of Death",
+    "Artifact of Dissonance",
+    "Artifact of Enigma",
+    "Artifact of Evolution",
+    "Artifact of Frailty",
+    "Artifact of Glass",
+    "Artifact of Honor",
+    "Artifact of Kin",
+    "Artifact of Metamorphosis",
+    "Artifact of Sacrifice",
+    "Artifact of Soul",
+    "Artifact of Spite",
+    "Artifact of Swarms",
+    "Artifact of Vengeance"
+]
+
 // module.exports = characters, itemTier;
