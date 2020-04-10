@@ -1,0 +1,53 @@
+<p>Hello Run Challenge Randomizer</p>
+
+<% if(randomized) { %>
+
+    <!-- Character Randomizer -->
+    <% if(randChar) { %>
+        <p>Character: <%= randChar.name %></p>
+    <% } %>
+
+    <!-- Character Skills Randomizer -->
+    <% if(randSkill) { %>
+
+        <% if(randChar.name === 'Mult-T') { %>
+            <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+            <p>Primary: <%= randChar.skillA2[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+        <% } else { %>
+            <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+        <% } %>
+
+        <p>Secondary: <%= randChar.skillB[Math.floor( Math.random() * randChar.skillB.length )] %></p>
+        <p>Utility: <%= randChar.skillC[Math.floor( Math.random() * randChar.skillC.length )] %></p>
+        <p>Special: <%= randChar.skillD[Math.floor( Math.random() * randChar.skillD.length )] %></p>
+      
+    <% } %>
+
+    <!-- Item Level Randomizer -->
+    <% if(randItem) { %>
+        <%= randItem %>
+    <% } %>
+
+<% } %>
+
+<!-- Challenger option select -->
+<form action='/' method='POST'>
+    <!-- Character Picker -->
+    <select type="checkbox" id="randChar" name="randChar">
+        <option value="random" <% if( 'random' === lastCharacterPicked) { %> selected <% } %> >Random</option>      
+        <% charList.forEach((value, index) => { %>
+            <option value=<%=  index %> <% if(index === parseInt(lastCharacterPicked)) { %> selected <% } %> > <%= value.name %> </option>
+        <% }) %>
+    </select>
+
+    <input type="checkbox" id="randSkill" name="randSkill" <% if(randSkill) { %> checked <% } %>>
+    <label for="randSkill">Randomize Skills</label>
+
+    <input type="checkbox" id="randItem" name="randItem" <% if(randItem) { %> checked <% } %>>
+    <label for="randItem">Randomize Item Tier</label>
+
+    <button type="submit">Randomize</button>
+</form>
+
+<p>Made by @breakinant</p>
+<a href="https://github.com/BreakinAnt/ror2randomchallenger">Feel free to help a newbie out (Github page)</a> 
