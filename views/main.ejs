@@ -10,13 +10,7 @@
     <!-- Character Skills Randomizer -->
     <% if(randSkill) { %>
 
-        <% if(randChar.name === 'Mult-T') { %>
-            <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
-            <p>Primary: <%= randChar.skillA2[Math.floor( Math.random() * randChar.skillA.length )] %></p>
-        <% } else { %>
-            <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
-        <% } %>
-
+        <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
         <p>Secondary: <%= randChar.skillB[Math.floor( Math.random() * randChar.skillB.length )] %></p>
         <p>Utility: <%= randChar.skillC[Math.floor( Math.random() * randChar.skillC.length )] %></p>
         <p>Special: <%= randChar.skillD[Math.floor( Math.random() * randChar.skillD.length )] %></p>
@@ -50,4 +44,4 @@
 </form>
 
 <p>Made by @breakinant</p>
-<a href="https://github.com/BreakinAnt/ror2randomchallenger">Feel free to help a newbie out (Github page)</a> 
+<a href="https://github.com/BreakinAnt/ror2randomchallenger">Feel free to help a newbie out (Github page) :)</a> 

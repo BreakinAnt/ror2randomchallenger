@@ -8,8 +8,7 @@ exports.characters = [
         },
         {
             name: 'Mult-T',
-            skillA:["Auto-Nailgun", "Rebar Puncher"],
-            skillA2:["Scrap Launcher", "Power-Saw"],
+            skillA:["Auto-Nailgun", "Rebar Puncher", "Scrap Launcher", "Power-Saw"],
             skillB:["Blast Canister"],
             skillC:["Transport Mode"],
             skillD:["Retool"]
