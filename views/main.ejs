@@ -10,7 +10,13 @@
     <!-- Character Skills Randomizer -->
     <% if(randSkill) { %>
 
-        <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+        <% if(randChar.name === 'Mult-T') { %>
+            <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+            <p>Second Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+        <% } else { %>
+            <p>Primary: <%= randChar.skillA[Math.floor( Math.random() * randChar.skillA.length )] %></p>
+        <% } %>
+        
         <p>Secondary: <%= randChar.skillB[Math.floor( Math.random() * randChar.skillB.length )] %></p>
         <p>Utility: <%= randChar.skillC[Math.floor( Math.random() * randChar.skillC.length )] %></p>
         <p>Special: <%= randChar.skillD[Math.floor( Math.random() * randChar.skillD.length )] %></p>
